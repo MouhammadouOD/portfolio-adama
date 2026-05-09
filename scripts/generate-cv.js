@@ -2,7 +2,7 @@
 'use strict';
 
 const PDFDocument = require('pdfkit');
-const { Document, Packer, Paragraph, TextRun, BorderStyle } = require('docx');
+const { Document, Packer, Paragraph, TextRun, BorderStyle, ExternalHyperlink } = require('docx');
 const fs   = require('fs');
 const path = require('path');
 
@@ -13,13 +13,14 @@ fs.mkdirSync(OUT, { recursive: true });
 // DATA
 // ═══════════════════════════════════════════════════════════════
 const D = {
-  name:  'Adama Ndiaye',
-  title: 'Assistante Gestion de Projets | Analyste Financière & CRM',
-  email: 'adamandiaye.works@gmail.com',
-  phone: '+221 76 271 48 88',
-  loc:   'Dakar, Sénégal',
-  li:    'linkedin.com/in/adamandiayeworks',
-  about: "Diplômée d'une Licence en Comptabilité & Gestion (FASEG – UCAD) et certifiée Salesforce Sales Operations, j'ai accompagné 4 missions freelance dans des secteurs variés — fintech, plateformes numériques et collaboration franco-sénégalaise — tout en gérant la comptabilité d'une structure éducative sur deux ans. Rigoureuse, organisée et à l'aise avec les outils digitaux et l'IA, je cherche à contribuer à des projets à impact social et de développement.",
+  name:      'Adama Ndiaye',
+  title:     'Assistante Gestion de Projets | Analyste Financière & CRM',
+  email:     'adamandiaye.works@gmail.com',
+  phone:     '+221 76 271 48 88',
+  loc:       'Dakar, Sénégal',
+  li:        'linkedin.com/in/adamandiayeworks',
+  portfolio: 'adamandiayeworks.vercel.app',
+  about:     "Diplômée d'une Licence en Comptabilité & Gestion (FASEG – UCAD) et certifiée Salesforce Sales Operations, j'ai accompagné 4 missions freelance dans des secteurs variés — fintech, plateformes numériques et collaboration franco-sénégalaise — tout en gérant la comptabilité d'une structure éducative sur deux ans. Rigoureuse, organisée et à l'aise avec les outils digitaux et l'IA, je cherche à contribuer à des projets à impact social et de développement.",
   experience: [
     {
       title:   'Assistante – Acquisition Clients, Projets & Comptabilité',
@@ -54,14 +55,14 @@ const D = {
     { degree: 'Baccalauréat Général – Série S2',   school: 'Sénégal',       loc: '',              year: '2018', detail: 'Sciences Expérimentales',                  modules: null },
   ],
   certs: [
-    { title: 'Salesforce Sales Operations',                                       org: 'Coursera · Salesforce', year: '2025', featured: true  },
-    { title: 'Gestion des prospects dans Salesforce',                             org: 'Coursera · Salesforce', year: '2025', featured: false },
-    { title: 'Gestion des opportunités dans Salesforce',                          org: 'Coursera · Salesforce', year: '2025', featured: false },
-    { title: "Vue d'ensemble des ventes et de la GRC",                            org: 'Coursera · Salesforce', year: '2025', featured: false },
-    { title: 'Rapports, tableaux de bord et réussite clients dans Salesforce',    org: 'Coursera · Salesforce', year: '2025', featured: false },
-    { title: 'Données pour les analystes commerciaux – Microsoft Excel',          org: 'Coursera · Microsoft',  year: '2025', featured: false },
-    { title: "Principes fondamentaux de l'analyse d'entreprise",                  org: 'Coursera',              year: '2025', featured: false },
-    { title: 'Développement Web – HTML, CSS, JavaScript',                         org: 'GoMyCode · Dakar',      year: '2021', featured: false },
+    { title: 'Salesforce Sales Operations',                                    org: 'Coursera · Salesforce', year: '2025', featured: true,  link: 'https://www.coursera.org/account/accomplishments/professional-cert/GQAQEHNWU08L' },
+    { title: 'Gestion des prospects dans Salesforce',                          org: 'Coursera · Salesforce', year: '2025', featured: false, link: 'https://www.coursera.org/account/accomplishments/records/EU1CMLMI4FVK' },
+    { title: 'Gestion des opportunités dans Salesforce',                       org: 'Coursera · Salesforce', year: '2025', featured: false, link: 'https://www.coursera.org/account/accomplishments/records/AYENZ0V3HI9C' },
+    { title: "Vue d'ensemble des ventes et de la GRC",                         org: 'Coursera · Salesforce', year: '2025', featured: false, link: 'https://www.coursera.org/account/accomplishments/records/7MW81L4O1TLW' },
+    { title: 'Rapports, tableaux de bord et réussite clients dans Salesforce', org: 'Coursera · Salesforce', year: '2025', featured: false, link: 'https://www.coursera.org/account/accomplishments/records/V1KZ817B25XZ' },
+    { title: 'Données pour les analystes commerciaux – Microsoft Excel',       org: 'Coursera · Microsoft',  year: '2025', featured: false, link: 'https://www.coursera.org/account/accomplishments/records/YECHV5HNBBOI' },
+    { title: "Principes fondamentaux de l'analyse d'entreprise",               org: 'Coursera',              year: '2025', featured: false, link: 'https://www.coursera.org/account/accomplishments/records/P7PYUDDVMKHM' },
+    { title: 'Développement Web – HTML, CSS, JavaScript',                      org: 'GoMyCode · Dakar',      year: '2021', featured: false, link: null },
   ],
   skills: [
     { cat: 'Gestion de Projets & CRM',  items: 'Coordination de projets · Salesforce CRM · Suivi opérationnel · Reporting' },
@@ -70,10 +71,10 @@ const D = {
     { cat: 'Outils Digitaux & IA',      items: 'Suite Microsoft Office · Outils IA · Canva · HTML/CSS' },
   ],
   langs: [
-    { name: 'Français',  level: 'Avancé — C1'          },
-    { name: 'Anglais',   level: 'Intermédiaire — B1'   },
-    { name: 'Wolof',     level: 'Langue maternelle'    },
-    { name: 'Espagnol',  level: 'Débutant — A1'        },
+    { name: 'Français',  level: 'Avancé — C1'        },
+    { name: 'Anglais',   level: 'Intermédiaire — B1' },
+    { name: 'Wolof',     level: 'Langue maternelle'  },
+    { name: 'Espagnol',  level: 'Débutant — A1'      },
   ],
 };
 
@@ -90,13 +91,13 @@ function makePDF() {
 
     const W  = 595.28;
     const ML = 45, MR = 45;
-    const CW = W - ML - MR; // 505
+    const CW = W - ML - MR;
     const NAVY = '#0D2137', BLUE = '#1565C0', BLUE2 = '#1976D2', GOLD = '#C8963E';
     const TEXT = '#1A1A2E', MUTED = '#4A5568', BGBLUE = '#E3F0FC';
 
     // ── HEADER ────────────────────────────────────────────────────────
-    doc.rect(0, 0, W, 118).fill(NAVY);
-    doc.rect(0, 0, 6, 118).fill(GOLD);
+    doc.rect(0, 0, W, 126).fill(NAVY);
+    doc.rect(0, 0, 6, 126).fill(GOLD);
 
     doc.font('Helvetica-Bold').fontSize(25).fillColor('#fff')
        .text(D.name, 54, 22, { width: CW });
@@ -105,9 +106,12 @@ function makePDF() {
        .text(D.title, 54, 57, { width: CW });
 
     doc.font('Helvetica').fontSize(8.5).fillColor('#B3C8E8')
-       .text(`${D.email}   ·   ${D.phone}   ·   ${D.loc}   ·   ${D.li}`, 54, 83, { width: CW });
+       .text(`${D.email}   ·   ${D.phone}   ·   ${D.loc}`, 54, 83, { width: CW });
 
-    let y = 136;
+    doc.font('Helvetica').fontSize(8.5).fillColor('#90CAF9')
+       .text(`${D.li}   ·   ${D.portfolio}`, 54, 99, { width: CW });
+
+    let y = 144;
 
     // ── Helpers ───────────────────────────────────────────────────────
     function section(label) {
@@ -142,22 +146,15 @@ function makePDF() {
 
     D.experience.forEach(exp => {
       guard(80);
-      // Period badge
       doc.rect(ML, y, 76, 16).fill(BGBLUE);
       doc.font('Helvetica-Bold').fontSize(8).fillColor(BLUE)
          .text(exp.period, ML, y + 3, { width: 76, align: 'center' });
-
-      // Job title
       doc.font('Helvetica-Bold').fontSize(10).fillColor(TEXT)
          .text(exp.title, ML + 84, y, { width: CW - 84 });
       y += 19;
-
-      // Company line
       doc.font('Helvetica-Oblique').fontSize(8.5).fillColor(BLUE2)
          .text(`${exp.company} — ${exp.type}   |   ${exp.loc}`, ML, y, { width: CW });
       y += 14;
-
-      // Bullets
       exp.bullets.forEach(b => {
         guard(14);
         doc.circle(ML + 5, y + 4, 2).fill(BLUE);
@@ -177,15 +174,12 @@ function makePDF() {
       doc.rect(ML, y, 52, 16).fill(BGBLUE);
       doc.font('Helvetica-Bold').fontSize(9).fillColor(BLUE)
          .text(edu.year, ML, y + 3, { width: 52, align: 'center' });
-
       doc.font('Helvetica-Bold').fontSize(10).fillColor(TEXT)
          .text(edu.degree, ML + 60, y, { width: CW - 60 });
       y += 19;
-
       doc.font('Helvetica-Oblique').fontSize(8.5).fillColor(BLUE2)
          .text(`${edu.school}${edu.loc ? '  —  ' + edu.loc : ''}`, ML + 60, y);
       y += 13;
-
       if (edu.detail) {
         doc.font('Helvetica-Bold').fontSize(8.5).fillColor(BLUE)
            .text(edu.detail, ML + 60, y);
@@ -205,24 +199,32 @@ function makePDF() {
 
     const colW = (CW - 12) / 2;
     for (let i = 0; i < D.certs.length; i += 2) {
-      guard(30);
+      guard(32);
       const ry = y;
       const c0 = D.certs[i];
       const c1 = D.certs[i + 1];
 
-      // Left
+      // Left cert
       doc.circle(ML + 4, ry + 5, c0.featured ? 4 : 2.5).fill(c0.featured ? GOLD : BLUE);
-      doc.font(c0.featured ? 'Helvetica-Bold' : 'Helvetica').fontSize(8.5).fillColor(TEXT)
-         .text(c0.title, ML + 13, ry, { width: colW - 14 });
+      doc.font(c0.featured ? 'Helvetica-Bold' : 'Helvetica')
+         .fontSize(8.5).fillColor(c0.link ? BLUE : TEXT)
+         .text(c0.title, ML + 13, ry, {
+           width: colW - 14,
+           ...(c0.link ? { link: c0.link, underline: true } : {}),
+         });
       doc.font('Helvetica').fontSize(7.5).fillColor(MUTED)
          .text(`${c0.org} · ${c0.year}`, ML + 13, ry + 12, { width: colW - 14 });
 
-      // Right
+      // Right cert
       if (c1) {
         const cx = ML + colW + 12;
         doc.circle(cx + 4, ry + 5, c1.featured ? 4 : 2.5).fill(c1.featured ? GOLD : BLUE);
-        doc.font(c1.featured ? 'Helvetica-Bold' : 'Helvetica').fontSize(8.5).fillColor(TEXT)
-           .text(c1.title, cx + 13, ry, { width: colW - 14 });
+        doc.font(c1.featured ? 'Helvetica-Bold' : 'Helvetica')
+           .fontSize(8.5).fillColor(c1.link ? BLUE : TEXT)
+           .text(c1.title, cx + 13, ry, {
+             width: colW - 14,
+             ...(c1.link ? { link: c1.link, underline: true } : {}),
+           });
         doc.font('Helvetica').fontSize(7.5).fillColor(MUTED)
            .text(`${c1.org} · ${c1.year}`, cx + 13, ry + 12, { width: colW - 14 });
       }
@@ -265,22 +267,47 @@ function makePDF() {
 // DOCX
 // ═══════════════════════════════════════════════════════════════
 async function makeDOCX() {
-  const pt = n => n * 20; // points to half-points
+  const pt = n => n * 20;
 
   const run  = (text, opts = {}) => new TextRun({ text, size: 20, color: '4A5568', ...opts });
   const bold = (text, opts = {}) => new TextRun({ text, size: 20, bold: true, color: '1A1A2E', ...opts });
 
-  const secH = (label) => new Paragraph({
+  const secH = label => new Paragraph({
     children: [new TextRun({ text: label.toUpperCase(), bold: true, size: 18, color: '1565C0', characterSpacing: 20 })],
     border: { bottom: { style: BorderStyle.SINGLE, size: 12, color: '1565C0', space: 4 } },
     spacing: { before: pt(16), after: pt(8) },
   });
 
-  const bullet = (text) => new Paragraph({
+  const bullet = text => new Paragraph({
     children: [run(`• ${text}`)],
     indent: { left: pt(18) },
     spacing: { before: 0, after: pt(2) },
   });
+
+  // Cert row: linked title if link exists, plain otherwise
+  const certPara = c => {
+    const titleRun = c.link
+      ? new ExternalHyperlink({
+          link: c.link,
+          children: [new TextRun({
+            text: c.title,
+            bold: c.featured,
+            size: c.featured ? 21 : 20,
+            color: '1565C0',
+            underline: {},
+          })],
+        })
+      : new TextRun({ text: c.title, bold: c.featured, size: c.featured ? 21 : 20, color: '1A1A2E' });
+
+    return new Paragraph({
+      children: [
+        new TextRun({ text: c.featured ? '★  ' : '›  ', bold: c.featured, size: 20, color: c.featured ? 'C8963E' : '1565C0' }),
+        titleRun,
+        new TextRun({ text: `   —   ${c.org} · ${c.year}`, size: 17, color: '718096' }),
+      ],
+      spacing: { before: pt(3), after: pt(3) },
+    });
+  };
 
   const paragraphs = [
     // ── HEADER ────────────────────────────────────────────────────────
@@ -293,16 +320,21 @@ async function makeDOCX() {
       spacing: { before: 0, after: pt(4) },
     }),
     new Paragraph({
-      children: [new TextRun({ text: `${D.email}   |   ${D.phone}   |   ${D.loc}   |   ${D.li}`, size: 17, color: '718096' })],
+      children: [new TextRun({ text: `${D.email}   |   ${D.phone}   |   ${D.loc}`, size: 17, color: '718096' })],
+      spacing: { before: 0, after: pt(2) },
+    }),
+    new Paragraph({
+      children: [
+        new ExternalHyperlink({ link: `https://${D.li}`, children: [new TextRun({ text: D.li, size: 17, color: '1565C0', underline: {} })] }),
+        new TextRun({ text: '   |   ', size: 17, color: '718096' }),
+        new ExternalHyperlink({ link: `https://${D.portfolio}`, children: [new TextRun({ text: D.portfolio, size: 17, color: '1565C0', underline: {} })] }),
+      ],
       spacing: { before: 0, after: pt(10) },
     }),
 
     // ── PROFIL ────────────────────────────────────────────────────────
     secH('Profil'),
-    new Paragraph({
-      children: [run(D.about)],
-      spacing: { before: 0, after: pt(4) },
-    }),
+    new Paragraph({ children: [run(D.about)], spacing: { before: 0, after: pt(4) } }),
 
     // ── EXPÉRIENCE ────────────────────────────────────────────────────
     secH('Expérience Professionnelle'),
@@ -335,34 +367,18 @@ async function makeDOCX() {
         children: [new TextRun({ text: `${edu.school}${edu.loc ? '  —  ' + edu.loc : ''}`, italics: true, size: 19, color: '1976D2' })],
         spacing: { before: 0, after: pt(2) },
       }),
-      ...(edu.detail ? [new Paragraph({
-        children: [new TextRun({ text: edu.detail, bold: true, size: 19, color: '1565C0' })],
-        spacing: { before: 0, after: pt(2) },
-      })] : []),
-      ...(edu.modules ? [new Paragraph({
-        children: [new TextRun({ text: edu.modules, italics: true, size: 17, color: '718096' })],
-        spacing: { before: 0, after: pt(6) },
-      })] : []),
+      ...(edu.detail ? [new Paragraph({ children: [new TextRun({ text: edu.detail, bold: true, size: 19, color: '1565C0' })], spacing: { before: 0, after: pt(2) } })] : []),
+      ...(edu.modules ? [new Paragraph({ children: [new TextRun({ text: edu.modules, italics: true, size: 17, color: '718096' })], spacing: { before: 0, after: pt(6) } })] : []),
     ]),
 
     // ── CERTIFICATIONS ────────────────────────────────────────────────
     secH('Certifications'),
-    ...D.certs.map(c => new Paragraph({
-      children: [
-        new TextRun({ text: c.featured ? '★  ' : '›  ', bold: c.featured, size: 20, color: c.featured ? 'C8963E' : '1565C0' }),
-        new TextRun({ text: c.title, bold: c.featured, size: c.featured ? 21 : 20, color: '1A1A2E' }),
-        new TextRun({ text: `   —   ${c.org} · ${c.year}`, size: 17, color: '718096' }),
-      ],
-      spacing: { before: pt(3), after: pt(3) },
-    })),
+    ...D.certs.map(c => certPara(c)),
 
     // ── COMPÉTENCES ───────────────────────────────────────────────────
     secH('Compétences'),
     ...D.skills.map(sk => new Paragraph({
-      children: [
-        bold(sk.cat + ' : '),
-        run(sk.items),
-      ],
+      children: [bold(sk.cat + ' : '), run(sk.items)],
       spacing: { before: pt(3), after: pt(3) },
     })),
 
@@ -376,7 +392,7 @@ async function makeDOCX() {
 
   const doc = new Document({
     creator: 'Adama Ndiaye',
-    title: 'CV — Adama Ndiaye',
+    title:   'CV — Adama Ndiaye',
     sections: [{
       properties: { page: { margin: { top: 720, bottom: 720, left: 900, right: 900 } } },
       children: paragraphs,
@@ -392,5 +408,5 @@ async function makeDOCX() {
 // RUN
 // ═══════════════════════════════════════════════════════════════
 Promise.all([makePDF(), makeDOCX()])
-  .then(() => console.log('\nFichiers générés dans public/assets/'))
+  .then(() => console.log('\nCV générés dans public/assets/'))
   .catch(e => { console.error(e); process.exit(1); });

@@ -10,7 +10,7 @@ export const profile = {
   phone: "+221 76 271 48 88",
   location: { fr: "Dakar, Sénégal", en: "Dakar, Senegal" },
   linkedin: "https://www.linkedin.com/in/adamandiayeworks",
-  portfolio: "https://portfolio-adama.vercel.app",
+  portfolio: "https://adamandiayeworks.vercel.app/",
   photo: null, // Mettre le chemin de la photo ici ex: "/assets/photo.jpg"
   cvPath:     "/assets/CV_Adama_Ndiaye.pdf",
   cvWordPath: "/assets/CV_Adama_Ndiaye.docx",
