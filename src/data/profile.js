@@ -44,14 +44,14 @@ export const profile = {
       period: "2025 – 2026",
       bullets: {
         fr: [
-          "Accompagné 4 clients sur des missions de développement web & mobile : FLA (plateforme de freelancing sénégalaise), SMK (projet fintech), AACTE (plateforme de collaboration franco-sénégalaise) et un client basé en France.",
+          "Accompagné 4 clients sur des missions de développement web & mobile : FLA (plateforme de freelancing sénégalaise), SMK (projet fintech) et AACTE (plateforme de collaboration franco-sénégalaise).",
           "Coordonné le suivi opérationnel de chaque projet : planification des jalons, relances clients et respect des délais.",
           "Établi les devis, factures et assuré le suivi des encaissements.",
           "Produit des rapports financiers mensuels synthétisant les flux de trésorerie.",
           "Contribué à la fidélisation client via un accompagnement personnalisé post-livraison.",
         ],
         en: [
-          "Supported 4 clients on web & mobile development missions: FLA (Senegalese freelancing platform), SMK (fintech project), AACTE (French-Senegalese local authorities collaboration platform) and a France-based client.",
+          "Supported 4 clients on web & mobile development missions: FLA (Senegalese freelancing platform), SMK (fintech project) and AACTE (French-Senegalese local authorities collaboration platform).",
           "Coordinated operational follow-up on each project: milestone planning, client follow-ups and deadline management.",
           "Drafted quotes, invoices and managed payment collection.",
           "Produced monthly financial reports summarizing cash flows.",

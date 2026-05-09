@@ -28,7 +28,7 @@ const D = {
       period:  '2025 – 2026',
       loc:     'Dakar, Sénégal',
       bullets: [
-        'Accompagné 4 clients sur des missions de développement web & mobile : FLA (freelancing sénégalais), SMK (fintech), AACTE (collaboration franco-sénégalaise) et un client basé en France.',
+        'Accompagné 4 clients sur des missions de développement web & mobile : FLA (freelancing sénégalais), SMK (fintech) et AACTE (collaboration franco-sénégalaise).',
         'Coordonné le suivi opérationnel de chaque projet : planification des jalons, relances clients et respect des délais.',
         'Établi les devis, factures et assuré le suivi des encaissements.',
         'Produit des rapports financiers mensuels synthétisant les flux de trésorerie.',
