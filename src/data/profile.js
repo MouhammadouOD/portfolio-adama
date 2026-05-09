@@ -12,7 +12,8 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/adamandiayeworks",
   portfolio: "https://portfolio-adama.vercel.app",
   photo: null, // Mettre le chemin de la photo ici ex: "/assets/photo.jpg"
-  cvPath: "/assets/CV_Adama_Ndiaye.pdf",
+  cvPath:     "/assets/CV_Adama_Ndiaye.pdf",
+  cvWordPath: "/assets/CV_Adama_Ndiaye.docx",
 
   about: {
     fr: "Diplômée d'une Licence en Comptabilité & Gestion (FASEG – UCAD) et certifiée Salesforce Sales Operations, j'ai accompagné 4 missions freelance dans des secteurs variés — fintech, plateformes numériques et collaboration franco-sénégalaise — tout en gérant la comptabilité d'une structure éducative sur deux ans. Rigoureuse, organisée et à l'aise avec les outils digitaux et l'IA, je cherche à mettre ces compétences au service de projets à impact social et de développement.",

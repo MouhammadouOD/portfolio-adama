@@ -12,7 +12,8 @@ export const translations = {
     },
     hero: {
       greeting: "Bonjour, je suis",
-      cta_cv: "Télécharger mon CV",
+      cta_cv:      "Télécharger mon CV",
+      cta_cv_word: "Format Word",
       cta_contact: "Me contacter",
       scroll: "Défiler",
     },
@@ -71,7 +72,8 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      cta_cv: "Download CV",
+      cta_cv:      "Download CV",
+      cta_cv_word: "Word format",
       cta_contact: "Get in touch",
       scroll: "Scroll",
     },

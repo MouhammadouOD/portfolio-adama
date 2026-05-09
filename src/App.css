@@ -100,7 +100,9 @@ button { border: none; cursor: pointer; font-family: inherit; }
   background: transparent; color: var(--blue); border: 2px solid var(--blue);
 }
 .btn--outline:hover { background: var(--blue-xl); transform: translateY(-1px); }
-.btn--sm { padding: 0.5rem 1rem; font-size: 0.8rem; }
+.btn--sm   { padding: 0.5rem 1rem; font-size: 0.8rem; }
+.btn--word { border-color: rgba(255,255,255,0.35); color: rgba(255,255,255,0.85); }
+.btn--word:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); transform: translateY(-1px); }
 .btn--full { width: 100%; justify-content: center; }
 
 /* ── Layout ────────────────────────────────────────────────── */
