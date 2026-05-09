@@ -3,34 +3,34 @@
 export const profile = {
   name: "Adama Ndiaye",
   title: {
-    fr: ["Gestionnaire Comptable & Analyste", "CRM Salesforce Certified", "Business Analyst"],
-    en: ["Accounting Manager & Analyst", "CRM Salesforce Certified", "Business Analyst"],
+    fr: ["Assistante Gestion de Projets", "Analyste Financière & CRM", "Coordinatrice Junior"],
+    en: ["Project Management Assistant", "Financial Analyst & CRM", "Junior Coordinator"],
   },
   email: "adamandiaye.works@gmail.com",
   phone: "+221 76 271 48 88",
   location: { fr: "Dakar, Sénégal", en: "Dakar, Senegal" },
   linkedin: "https://www.linkedin.com/in/adamandiayeworks",
-  portfolio: "https://adama-ndiaye.github.io/portfolio",
+  portfolio: "https://portfolio-adama.vercel.app",
   photo: null, // Mettre le chemin de la photo ici ex: "/assets/photo.jpg"
   cvPath: "/assets/CV_Adama_Ndiaye.pdf",
 
   about: {
-    fr: "Titulaire d'une Licence en Comptabilité & Gestion (FASEG – UCAD) et certifiée Salesforce Sales Operations, je combine une maîtrise solide de la comptabilité générale et de l'analyse financière à des compétences avancées en CRM et data. Forte d'une expérience en gestion de projets et acquisition client dans une structure tech, j'apporte rigueur analytique, sens commercial et agilité digitale à toute organisation ambitieuse.",
-    en: "Holding a Bachelor's degree in Accounting & Management (FASEG – UCAD) and Salesforce Sales Operations certified, I combine solid expertise in general accounting and financial analysis with advanced CRM and data skills. With hands-on experience in project management and client acquisition in a tech company, I bring analytical rigor, business acumen, and digital agility to any ambitious organization.",
+    fr: "Diplômée d'une Licence en Comptabilité & Gestion (FASEG – UCAD) et certifiée Salesforce Sales Operations, j'ai accompagné 4 missions freelance dans des secteurs variés — fintech, plateformes numériques et collaboration franco-sénégalaise — tout en gérant la comptabilité d'une structure éducative sur deux ans. Rigoureuse, organisée et à l'aise avec les outils digitaux et l'IA, je cherche à mettre ces compétences au service de projets à impact social et de développement.",
+    en: "Holding a Bachelor's in Accounting & Management (FASEG – UCAD) and Salesforce Sales Operations certified, I have supported 4 freelance missions across fintech, digital platforms and French-Senegalese collaboration sectors, while managing an educational institution's accounting for two years. Rigorous, organized and fluent with digital and AI tools, I am eager to contribute to impactful social development projects.",
   },
 
   stats: {
     fr: [
-      { value: "6", label: "Certifications" },
-      { value: "1+", label: "An d'expérience" },
-      { value: "3", label: "Projets gérés" },
-      { value: "2", label: "Spécialisations" },
+      { value: "4",  label: "Missions accompagnées" },
+      { value: "2",  label: "Ans de gestion comptable" },
+      { value: "6",  label: "Certifications" },
+      { value: "1",  label: "Client international" },
     ],
     en: [
-      { value: "6", label: "Certifications" },
-      { value: "1+", label: "Year of experience" },
-      { value: "3", label: "Projects managed" },
-      { value: "2", label: "Specializations" },
+      { value: "4",  label: "Missions supported" },
+      { value: "2",  label: "Years of accounting" },
+      { value: "6",  label: "Certifications" },
+      { value: "1",  label: "International client" },
     ],
   },
 
@@ -43,18 +43,39 @@ export const profile = {
       period: "2025 – 2026",
       bullets: {
         fr: [
-          "Développé un portefeuille de clients pour des projets de développement web & mobile.",
-          "Coordonné le suivi opérationnel de plusieurs projets : planification, relances et respect des délais.",
+          "Accompagné 4 clients sur des missions de développement web & mobile : FLA (plateforme de freelancing sénégalaise), SMK (projet fintech), AACTE (plateforme de collaboration franco-sénégalaise) et un client basé en France.",
+          "Coordonné le suivi opérationnel de chaque projet : planification des jalons, relances clients et respect des délais.",
           "Établi les devis, factures et assuré le suivi des encaissements.",
           "Produit des rapports financiers mensuels synthétisant les flux de trésorerie.",
           "Contribué à la fidélisation client via un accompagnement personnalisé post-livraison.",
         ],
         en: [
-          "Built and grew a client portfolio for web & mobile development projects.",
-          "Coordinated operational follow-up on multiple simultaneous projects.",
+          "Supported 4 clients on web & mobile development missions: FLA (Senegalese freelancing platform), SMK (fintech project), AACTE (French-Senegalese local authorities collaboration platform) and a France-based client.",
+          "Coordinated operational follow-up on each project: milestone planning, client follow-ups and deadline management.",
           "Drafted quotes, invoices and managed payment collection.",
           "Produced monthly financial reports summarizing cash flows.",
           "Contributed to client retention through personalized post-delivery support.",
+        ],
+      },
+    },
+    {
+      title: { fr: "Gestionnaire Comptable", en: "Accounting Manager" },
+      company: "École Franco-Arabe Alhidaya Keur Fatma Haris",
+      type: { fr: "Mission externe", en: "External mission" },
+      location: "Dakar, Sénégal",
+      period: "2024 – 2026",
+      bullets: {
+        fr: [
+          "Tenu la comptabilité générale de l'établissement : saisie des opérations, lettrage et rapprochements bancaires.",
+          "Établi les rapports financiers mensuels et annuels à destination de la direction.",
+          "Assuré le suivi des encaissements (frais de scolarité) et des dépenses opérationnelles.",
+          "Garanti la conformité des documents comptables et la traçabilité de l'ensemble des flux financiers.",
+        ],
+        en: [
+          "Maintained general accounting records: journal entries, reconciliation and bank statements.",
+          "Prepared monthly and annual financial reports for management.",
+          "Tracked tuition fee collections and operational expenses.",
+          "Ensured accounting document compliance and full financial traceability.",
         ],
       },
     },
@@ -147,53 +168,122 @@ export const profile = {
 
   skills: {
     fr: [
-      { category: "CRM & Ventes", items: [{ name: "Salesforce", level: 90 }, { name: "Lead Management", level: 85 }, { name: "Reporting & Dashboards", level: 88 }] },
-      { category: "Analyse & Données", items: [{ name: "Excel avancé (TCD)", level: 88 }, { name: "Tableaux de bord", level: 82 }, { name: "Reporting financier", level: 85 }] },
-      { category: "Comptabilité", items: [{ name: "Comptabilité générale", level: 90 }, { name: "Facturation", level: 92 }, { name: "Analyse financière", level: 82 }] },
-      { category: "Outils & Tech", items: [{ name: "Suite Microsoft Office", level: 88 }, { name: "Canva", level: 75 }, { name: "HTML / CSS / JS", level: 55 }, { name: "Outils IA", level: 72 }] },
+      {
+        category: "Gestion de Projets & CRM",
+        items: [
+          { name: "Coordination de projets", level: 80 },
+          { name: "Salesforce CRM",          level: 85 },
+          { name: "Suivi opérationnel",       level: 82 },
+          { name: "Reporting & Tableaux de bord", level: 85 },
+        ],
+      },
+      {
+        category: "Analyse & Données",
+        items: [
+          { name: "Excel avancé (TCD)",    level: 88 },
+          { name: "Reporting financier",   level: 85 },
+          { name: "Analyse de données",    level: 78 },
+        ],
+      },
+      {
+        category: "Comptabilité",
+        items: [
+          { name: "Comptabilité générale", level: 88 },
+          { name: "Facturation & devis",   level: 90 },
+          { name: "Analyse financière",    level: 80 },
+        ],
+      },
+      {
+        category: "Outils Digitaux & IA",
+        items: [
+          { name: "Suite Microsoft Office", level: 88 },
+          { name: "Outils IA",              level: 75 },
+          { name: "Canva",                  level: 75 },
+          { name: "HTML / CSS",             level: 55 },
+        ],
+      },
     ],
     en: [
-      { category: "CRM & Sales", items: [{ name: "Salesforce", level: 90 }, { name: "Lead Management", level: 85 }, { name: "Reporting & Dashboards", level: 88 }] },
-      { category: "Analysis & Data", items: [{ name: "Advanced Excel (PivotTables)", level: 88 }, { name: "Dashboards", level: 82 }, { name: "Financial reporting", level: 85 }] },
-      { category: "Accounting", items: [{ name: "General accounting", level: 90 }, { name: "Invoicing", level: 92 }, { name: "Financial analysis", level: 82 }] },
-      { category: "Tools & Tech", items: [{ name: "Microsoft Office Suite", level: 88 }, { name: "Canva", level: 75 }, { name: "HTML / CSS / JS", level: 55 }, { name: "AI Tools", level: 72 }] },
+      {
+        category: "Project Management & CRM",
+        items: [
+          { name: "Project coordination",      level: 80 },
+          { name: "Salesforce CRM",            level: 85 },
+          { name: "Operational follow-up",     level: 82 },
+          { name: "Reporting & Dashboards",    level: 85 },
+        ],
+      },
+      {
+        category: "Analysis & Data",
+        items: [
+          { name: "Advanced Excel (PivotTables)", level: 88 },
+          { name: "Financial reporting",          level: 85 },
+          { name: "Data analysis",                level: 78 },
+        ],
+      },
+      {
+        category: "Accounting",
+        items: [
+          { name: "General accounting",  level: 88 },
+          { name: "Invoicing & quotes",  level: 90 },
+          { name: "Financial analysis",  level: 80 },
+        ],
+      },
+      {
+        category: "Digital Tools & AI",
+        items: [
+          { name: "Microsoft Office Suite", level: 88 },
+          { name: "AI Tools",               level: 75 },
+          { name: "Canva",                  level: 75 },
+          { name: "HTML / CSS",             level: 55 },
+        ],
+      },
     ],
   },
 
   languages: {
     fr: [
-      { name: "Français", level: "Avancé – C1", pct: 90 },
-      { name: "Anglais", level: "Intermédiaire – B1", pct: 55 },
-      { name: "Wolof", level: "Langue maternelle", pct: 100 },
-      { name: "Espagnol", level: "Débutant – A1", pct: 20 },
+      { name: "Français", level: "Avancé – C1",        pct: 90  },
+      { name: "Anglais",  level: "Intermédiaire – B1", pct: 55  },
+      { name: "Wolof",    level: "Langue maternelle",  pct: 100 },
+      { name: "Espagnol", level: "Débutant – A1",      pct: 20  },
     ],
     en: [
-      { name: "French", level: "Advanced – C1", pct: 90 },
-      { name: "English", level: "Intermediate – B1", pct: 55 },
-      { name: "Wolof", level: "Native language", pct: 100 },
-      { name: "Spanish", level: "Beginner – A1", pct: 20 },
+      { name: "French",   level: "Advanced – C1",      pct: 90  },
+      { name: "English",  level: "Intermediate – B1",  pct: 55  },
+      { name: "Wolof",    level: "Native language",    pct: 100 },
+      { name: "Spanish",  level: "Beginner – A1",      pct: 20  },
     ],
   },
 
   projects: [
     {
-      title: { fr: "Tableau de bord financier", en: "Financial Dashboard" },
-      description: { fr: "Tableau de bord Excel de suivi des flux de trésorerie et indicateurs financiers mensuels chez MODLABS.", en: "Excel dashboard tracking monthly cash flows and financial KPIs at MODLABS." },
-      tech: ["Excel", "TCD", "Finance"],
-      status: "coming", // "live" ou "coming"
-      link: null,
-    },
-    {
-      title: { fr: "Rapport de gestion mensuel", en: "Monthly Management Report" },
-      description: { fr: "Rapport de gestion synthétisant la facturation, les encaissements et l'avancement des projets.", en: "Management report summarizing invoicing, collections and project progress." },
-      tech: ["Excel", "Comptabilité", "Reporting"],
+      title: { fr: "Tableau de bord financier – École Alhidaya", en: "Financial Dashboard – Alhidaya School" },
+      description: {
+        fr: "Tableau de bord Excel de suivi des flux de trésorerie, encaissements et dépenses de l'École Franco-Arabe Alhidaya sur 2 ans.",
+        en: "Excel dashboard tracking cash flows, collections and expenses for Alhidaya Franco-Arabic School over 2 years.",
+      },
+      tech: ["Excel", "TCD", "Finance", "Comptabilité"],
       status: "coming",
       link: null,
     },
     {
-      title: { fr: "Campagne d'acquisition clients", en: "Client Acquisition Campaign" },
-      description: { fr: "Stratégie de prospection et d'acquisition de clients pour des projets tech web & mobile.", en: "Prospecting and client acquisition strategy for web & mobile tech projects." },
-      tech: ["Salesforce", "CRM", "Ventes"],
+      title: { fr: "Rapport de gestion – MODLABS", en: "Management Report – MODLABS" },
+      description: {
+        fr: "Rapports mensuels synthétisant la facturation, les encaissements et l'avancement des 4 projets clients suivis.",
+        en: "Monthly reports summarizing invoicing, collections and progress across 4 client projects.",
+      },
+      tech: ["Excel", "Reporting", "Salesforce"],
+      status: "coming",
+      link: null,
+    },
+    {
+      title: { fr: "Accompagnement AACTE", en: "AACTE Project Support" },
+      description: {
+        fr: "Suivi de projet pour AACTE, plateforme de mise en collaboration des collectivités locales françaises et sénégalaises.",
+        en: "Project follow-up for AACTE, a platform connecting French and Senegalese local authorities.",
+      },
+      tech: ["Gestion de projet", "CRM", "Coordination"],
       status: "coming",
       link: null,
     },
